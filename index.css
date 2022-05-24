@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* custom properties */
+:root {
+    --ff-karla: 'Karla', sans-serif;
+    --ff-inter: 'Inter', sans-serif;
+
+    --fs-h1: 2.25rem;
+    --fs-h2: 1.25rem;
+    --fs-h3: 1.125rem;
+    --fs-body: 1rem;
+
+    --fw-normal: 400;
+    --fw-bold: 800;
+
+    --fc-light: #fff;
+    --fc-semi-dark: #6B7280;
+    --fc-dark: #273549;
+    --fc-accent: #F59E0B;
+
+    --bc-light: #FEF3C7;
+}
+
+@media (min-width:550px) {
+    :root {
+        --fs-h1: 3rem;
+        --fs-h2: 1.5rem;
+        --fs-h3: 1.25rem;
+        --fs-body: 1rem;    
+    }
+}
+
+
+/* general styles */
+body {
+    font-family: var(--ff-inter);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-normal);
+    color: var(--fc-accent);
+    background-color: var(--bc-light);
+    display: flex;
+    justify-content: center;
+}
+
+/* typography */
+h1, h2, h3 p {margin: 0;}
+
+h1 {
+    font-family: var(--ff-karla);
+    font-size: var(--fs-h1);
+}
+
+p {font-size: var(--fs-body);}
+
+.title-secondary {
+    color: var(--fc-semi-dark);
+    font-size: var(--fs-h2);
+}
+
+.title-accent, .password-choice {
+    color: var(--fc-accent);
+}
+
+.title-accent {
+    display: block;
+    margin-top: -.5rem;  
+}
+
+/* layout */
+.main-container {
+    width: 500px;
+    max-width: 95%;
+    margin-top: 1em;
+}
+
+.header-title {
+    margin-bottom: 3em;
+}
+
+.title-main {
+    color: var(--fc-dark);
+    margin-bottom: .75rem;
+    letter-spacing: -2px;
+}
+
+/* button */
+.btn-generate {
+    color: var(--fc-light);
+    background-color: var(--fc-accent);
+    padding: .7rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-body);
+    letter-spacing: 1px;
+    transform: scale(1);
+    transition: all 250ms ;
+}
+
+.btn-generate:hover {
+    transform: scale(1.05);
+}
+
+/* icon */
+.lightning-icon {
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: .75rem;
+}
+
+/* password setting */
+.password-setting {
+    display: flex;
+    flex-direction: column;
+    color: var(--fc-dark);
+    font-size: .85rem;
+}
+
+.password-opt{
+    margin-bottom: 1em;
+}
+
+.password-length {
+    width: 55px;
+}
+
+.pass-length {
+    align-self: flex-end;
+}
+
+.warning-message {
+    display: none;
+    font-size: .75rem;
+    color: red;
+}
+
+.show-message {
+    display: block;
+}
+
+hr {
+    margin-bottom: 1em;
+}
+
+.note {
+    display: inline-block;
+    color: var(--fc-dark);
+    margin-bottom: 1em;
+}
+
+
+/* password options */
+.password-options {
+    display: grid;
+    justify-items: center;
+}
+
+.password-choice {
+    width: auto;
+    background-color: var(--fc-dark);
+    border: none;
+    border-radius: 6px;
+    padding: .75em 1.125em;
+    font-size: .9rem;
+    text-align: center;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+@media (min-width: 450px) {
+    .password-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .password-choice {
+        width: 220px;
+        /* font-size: var(--fs-body); */
+        margin-bottom: 1em;
+        margin-right: 1.25em;
+    }
+}
+
+@media (min-width: 550px) {
+    .password-choice {
+        padding: .75em 1.325em;
+        margin-bottom: 1em;
+        margin-right: 1.5em;
+    }
+}
+
+
+/* copy password */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

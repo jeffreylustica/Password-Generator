@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header-title">
+            <h1 class="title-main">Generate a <span class="title-accent">random password</span></h1>
+            <p class="title-secondary">Never use an insecure password again.</p>
+        </header>
+
+        <button id="btn-generate-pass" class="btn-generate"><span><img class="lightning-icon" src="icons/Lightning bolt.png" alt="lightning icon"></span>Generate passwords</button>
+
+        <div class="password-setting">
+            <label>
+                <input id="opt-lowercase" data-opt class="password-opt" type="checkbox" placeholder="" name="lowercaseType">
+                Lowercase
+            </label>
+            <label>
+                <input id="opt-uppercase" data-opt class="password-opt" type="checkbox" placeholder="" name="uppercaseType">
+                Uppercase
+            </label>
+            <label>
+                <input id="opt-number" data-opt class="password-opt" type="checkbox" placeholder="" name="numberType">
+                Number
+            </label>
+            <label>
+                <input  id="opt-specialchar" data-opt class="password-opt" type="checkbox" placeholder="" 
+                name="specialCharType">
+                Special Character
+            </label>
+            <label class="pass-length">
+                <input id="opt-length" data-opt class="password-opt password-length" type="number" placeholder="0">
+                Length
+            </label>          
+        </div>
+
+        <p class="warning-message" id="warning-el">* Password length should not be less than the number of chosen criteria</p>
+
+        <hr>
+
+        <small class="note">* 1-click copy password</small>
+
+        <div class="password-options">
+            <div class="option-item">
+                <div class="tooltip">
+                    <span class="tooltiptext" id="tooltiptext-el">Copy to clipboard</span>
+                    <input class="password-choice" type="text" placeholder="..." readonly>
+                </div>
+            </div>
+
+            <div class="option-item">
+                <div class="tooltip">
+                    <span class="tooltiptext" id="tooltiptext-el">Copy to clipboard</span>
+                    <input class="password-choice" type="text" placeholder="..." readonly>
+                </div>
+            </div>
+
+            <div class="option-item">
+                <div class="tooltip">
+                    <span class="tooltiptext" id="tooltiptext-el">Copy to clipboard</span>
+                    <input class="password-choice" type="text" placeholder="..." readonly>
+                </div>
+            </div>
+
+            <div class="option-item">
+                <div class="tooltip">
+                    <span class="tooltiptext" id="tooltiptext-el">Copy to clipboard</span>
+                    <input class="password-choice" type="text" placeholder="..." readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
