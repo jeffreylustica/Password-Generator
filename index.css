@@ -107,6 +107,7 @@ p {font-size: var(--fs-body);}
 
 .btn-generate:hover {
     transform: scale(1.05);
+    background-color: #5a3c07;
 }
 
 /* icon */
